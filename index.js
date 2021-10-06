@@ -16,7 +16,6 @@ const checksMiddleware = (request, response, next) => {
 
     if (index < 0) { return response.status(404).json({ message: "order not found" }) }
 
-
     request.userIndex = index
     request.userId = id
 
@@ -32,7 +31,6 @@ const checkMethodUrl = (request, response, next) => {
 
     next()
 }
-
 
 app.post('/users', checkMethodUrl, (request, response) => {
 
